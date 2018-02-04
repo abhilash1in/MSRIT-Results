@@ -2,3 +2,5 @@ beautifulsoup4
 django
 MySQL-python
 lxml
+requests
+django-storages

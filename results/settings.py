@@ -102,8 +102,8 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Default term
 
-TERM_YEAR = 2017
-TERM_MONTH = 6
+TERM_YEAR = 2018
+TERM_MONTH = 1
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -126,6 +126,7 @@ USE_TZ = True
 AWS_STORAGE_BUCKET_NAME = 'msrit-results'
 AWS_ACCESS_KEY_ID = credentials.aws['access_key_id']
 AWS_SECRET_ACCESS_KEY = credentials.aws['secret_access_key']
+AWS_AUTO_CREATE_BUCKET = True
 
 # Tell django-storages that when coming up with the URL for an item in S3 storage, keep
 # it simple - just use this domain plus the path. (If this isn't set, things get complicated).

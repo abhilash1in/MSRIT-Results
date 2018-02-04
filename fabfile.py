@@ -1,11 +1,11 @@
 from fabric.api import local, settings, abort, run, cd, env
 
-env.hosts = ['52.10.173.250']
-env.user = 'ec2-user'
+env.hosts = ['13.127.48.135']
+env.user = 'ubuntu'
 env.key_filename = '/Users/anirudh/Documents/Python-Projects/Results/key.pem'
 
 def prepare_deploy(message='fab push'):
-    local('git add . && git commit'+" -m '"+message+"'")
+    local('git add -A && git commit'+" -m '"+message+"'")
     local('git push')
 
 def deploy():

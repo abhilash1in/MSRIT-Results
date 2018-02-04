@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 from results_app.models import Student, Result, Subject, SubjectList
-from . import result_fetcher, add_result
+from . import add_result
 
 class Command(BaseCommand):
     def add_arguments(self, parser):

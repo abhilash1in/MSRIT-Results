@@ -10,7 +10,7 @@ def add_usn(usn):
         s = Student.objects.get(usn=usn)
         if not Result.objects.filter(student=s, date=date(settings.TERM_YEAR, settings.TERM_MONTH, 1)).exists():
             r = result_fetcher.fetch_result(usn)
-            if not r:
+            if r is None:
                 return
             # Because department changes after first year
             dept = r.department
@@ -22,6 +22,7 @@ def add_usn(usn):
             put_result(s, r)
             
     except ObjectDoesNotExist:
+        print 'ObjectDoesNotExist'
         r = result_fetcher.fetch_result(usn)
         # Check if the USN is non-existent
         if r is None:
